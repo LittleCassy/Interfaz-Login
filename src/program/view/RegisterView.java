@@ -295,9 +295,9 @@ public class RegisterView extends javax.swing.JFrame {
     private void Btn_RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_RegisterActionPerformed
         // TODO add your handling code here:
         if(checkStatus()){
-            if(UserLogic.RegisterUser()){
-                Sucess.setVisible(true);
+            if(UserLogic.RegisterUser(TF_Username.getText(), TF_Email.getText(), TF_Password.getText(), FTF_Birthday.getText())){
                 myMain.setVisible(true);
+                Sucess.setVisible(true);
                 this.dispose();
             }else{
                 label_State.setText("User already registed or incorrect data");

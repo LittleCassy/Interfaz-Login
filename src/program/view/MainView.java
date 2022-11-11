@@ -7,6 +7,7 @@ package program.view;
 import java.io.File;
 import javax.print.attribute.standard.Media;
 
+import program.controllers.ProfileManager;
 import program.controllers.UserLogic;
 
 /**
@@ -23,6 +24,10 @@ public class MainView extends javax.swing.JFrame {
         UserLogic.Init();
     }
 
+    public void updateComponent() {
+    	label_Username.setText(ProfileManager.getUsername());
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,7 +42,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         LoginInfo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        label_Username = new javax.swing.JLabel();
         LoginButtons = new javax.swing.JPanel();
         btn_Login = new javax.swing.JButton();
         btn_Register = new javax.swing.JButton();
@@ -78,9 +83,9 @@ public class MainView extends javax.swing.JFrame {
         jLabel3.setText("Welcome:");
         LoginInfo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jLabel4.setText("Desconocido");
-        LoginInfo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
+        label_Username.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        label_Username.setText("Desconocido");
+        LoginInfo.add(label_Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
 
         getContentPane().add(LoginInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 180, 40));
 
@@ -213,7 +218,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel label_Username;
     private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }

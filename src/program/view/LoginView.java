@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import program.controllers.UserLogic;
+
 /**
  *
  * @author Casandra McJack
@@ -104,7 +106,14 @@ public class LoginView extends javax.swing.JFrame {
     private void Btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_LoginActionPerformed
         // TODO add your handling code here:
         if(checkStatus()){
-            
+            if(UserLogic.LoginUser(TF_Email.getText(), TF_Pass.getText())) {
+            	this.dispose();
+            	myMain.updateComponent();
+            	myMain.setVisible(true);
+            }else {
+            	System.out.println("ERROR");
+            	//ERROR
+            }
         }else{
             
         }

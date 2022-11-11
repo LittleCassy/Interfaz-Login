@@ -30,7 +30,24 @@ public class UserLogic {
 	
     public static boolean RegisterUser(String username, String email, String password, String Birthday){
     	
-        
-        return false;
+    	User myUser = new User(username, email, password, Birthday);
+    	
+        if(!myController.getMyLogic().findUser(myUser)) {
+        	myController.getMyLogic().insertUser(myUser);
+        	return true;
+        }else {
+        	return false;
+        }
+    }
+    
+    public static boolean LoginUser(String email, String password) {
+    	
+    	User myUser = new User(null, email, password, null);
+    	
+        if(myController.getMyLogic().LoginUser(myUser)) {
+        	return true;
+        }else {
+        	return false;
+        }
     }
 }

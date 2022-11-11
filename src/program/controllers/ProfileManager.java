@@ -5,8 +5,9 @@ package program.controllers;
  * @author Cassy McJack
  */
 public class ProfileManager {
-    private static String username;
-    private static String email;
+	
+    private static String username ="";
+    private static String email ="";
 
     public static String getUsername() {
         return username;

@@ -9,14 +9,12 @@ public class User {
     private static String email;
     private static String password;
     private static String birthday;
-    private static String consoles;
 
-    public User(String username, String email, String password, String birthday, String consoles) {
+    public User(String username, String email, String password, String birthday) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.birthday = birthday;
-        this.consoles = consoles;
     }
     
     public static String getUsername() {
@@ -50,14 +48,4 @@ public class User {
     public static void setBirthday(String birthday) {
         User.birthday = birthday;
     }
-
-    public static String getConsoles() {
-        return consoles;
-    }
-
-    public static void setConsoles(String consoles) {
-        User.consoles = consoles;
-    }
-    
-    
 }
