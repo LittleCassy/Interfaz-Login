@@ -1,5 +1,11 @@
 package program.view;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.util.ArrayList;
+import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -7,15 +13,19 @@ package program.view;
 
 /**
  *
- * @author lazon
+ * @author Cassy McJack
  */
 public class RegisterView extends javax.swing.JFrame {
 
     /**
      * Creates new form RegisterView
      */
+    
+    ArrayList<JTextField> myFields = new ArrayList<>();
+    
     public RegisterView() {
         initComponents();
+        gatherTF();
     }
 
     /**
@@ -27,7 +37,6 @@ public class RegisterView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BtnGr_ToS = new javax.swing.ButtonGroup();
         MainPanel = new javax.swing.JPanel();
         Data = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -43,22 +52,22 @@ public class RegisterView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         FTF_Birthday = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
-        CB_PS = new javax.swing.JCheckBox();
-        CB_Xbox = new javax.swing.JCheckBox();
-        CB_Stadia = new javax.swing.JCheckBox();
-        CB_Switch = new javax.swing.JCheckBox();
-        CB_Ouya = new javax.swing.JCheckBox();
+        jPanel1 = new javax.swing.JPanel();
         CB_PC = new javax.swing.JCheckBox();
+        CB_Switch = new javax.swing.JCheckBox();
         CB_PSP = new javax.swing.JCheckBox();
-        CB_NES = new javax.swing.JCheckBox();
         CB_Mobile = new javax.swing.JCheckBox();
+        CB_NES = new javax.swing.JCheckBox();
+        CB_Ouya = new javax.swing.JCheckBox();
+        CB_PS = new javax.swing.JCheckBox();
+        CB_Stadia = new javax.swing.JCheckBox();
+        CB_Xbox = new javax.swing.JCheckBox();
         ToS = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
         Btn_Register = new javax.swing.JButton();
+        label_State = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Register, please :)");
@@ -69,7 +78,7 @@ public class RegisterView extends javax.swing.JFrame {
         Data.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jLabel1.setText("Register Data");
+        jLabel1.setText("Sign up Data");
         Data.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 6, -1, -1));
 
         jLabel2.setText("Username");
@@ -101,30 +110,7 @@ public class RegisterView extends javax.swing.JFrame {
         jLabel9.setText("Used platforms");
         Data.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 244, -1, -1));
 
-        CB_PS.setText("Play Station");
-        Data.add(CB_PS, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 278, -1, -1));
-
-        CB_Xbox.setText("XBox");
-        Data.add(CB_Xbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 304, -1, -1));
-
-        CB_Stadia.setText("Stadia");
-        CB_Stadia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CB_StadiaActionPerformed(evt);
-            }
-        });
-        Data.add(CB_Stadia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 304, -1, -1));
-
-        CB_Switch.setText("Switch");
-        Data.add(CB_Switch, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 330, -1, -1));
-
-        CB_Ouya.setText("Ouya");
-        CB_Ouya.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CB_OuyaActionPerformed(evt);
-            }
-        });
-        Data.add(CB_Ouya, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 278, -1, -1));
+        jPanel1.setLayout(new java.awt.GridLayout(4, 3, 0, 10));
 
         CB_PC.setText("PC");
         CB_PC.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +118,10 @@ public class RegisterView extends javax.swing.JFrame {
                 CB_PCActionPerformed(evt);
             }
         });
-        Data.add(CB_PC, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, -1, -1));
+        jPanel1.add(CB_PC);
+
+        CB_Switch.setText("Switch");
+        jPanel1.add(CB_Switch);
 
         CB_PSP.setText("PSP");
         CB_PSP.addActionListener(new java.awt.event.ActionListener() {
@@ -140,15 +129,7 @@ public class RegisterView extends javax.swing.JFrame {
                 CB_PSPActionPerformed(evt);
             }
         });
-        Data.add(CB_PSP, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 278, -1, -1));
-
-        CB_NES.setText("NES");
-        CB_NES.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CB_NESActionPerformed(evt);
-            }
-        });
-        Data.add(CB_NES, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 304, -1, -1));
+        jPanel1.add(CB_PSP);
 
         CB_Mobile.setText("Mobile");
         CB_Mobile.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +137,39 @@ public class RegisterView extends javax.swing.JFrame {
                 CB_MobileActionPerformed(evt);
             }
         });
-        Data.add(CB_Mobile, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 330, -1, -1));
+        jPanel1.add(CB_Mobile);
+
+        CB_NES.setText("NES");
+        CB_NES.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_NESActionPerformed(evt);
+            }
+        });
+        jPanel1.add(CB_NES);
+
+        CB_Ouya.setText("Ouya");
+        CB_Ouya.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_OuyaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(CB_Ouya);
+
+        CB_PS.setText("Play Station");
+        jPanel1.add(CB_PS);
+
+        CB_Stadia.setText("Stadia");
+        CB_Stadia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CB_StadiaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(CB_Stadia);
+
+        CB_Xbox.setText("XBox");
+        jPanel1.add(CB_Xbox);
+
+        Data.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 280, 110));
 
         ToS.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -168,20 +181,6 @@ public class RegisterView extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextPane1);
 
         ToS.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 34, 221, 262));
-
-        BtnGr_ToS.add(jRadioButton1);
-        jRadioButton1.setText("Accept ToS");
-        ToS.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 308, -1, -1));
-
-        BtnGr_ToS.add(jRadioButton2);
-        jRadioButton2.setSelected(true);
-        jRadioButton2.setText("Reject ToS");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
-        ToS.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 334, -1, -1));
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
@@ -201,13 +200,21 @@ public class RegisterView extends javax.swing.JFrame {
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Data, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ToS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         getContentPane().add(MainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 560, 400));
 
-        Btn_Register.setText("Register");
+        Btn_Register.setText("Sign up");
+        Btn_Register.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_RegisterActionPerformed(evt);
+            }
+        });
         getContentPane().add(Btn_Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 410, -1, -1));
+
+        label_State.setForeground(new java.awt.Color(255, 0, 0));
+        getContentPane().add(label_State, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 300, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -236,9 +243,15 @@ public class RegisterView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CB_MobileActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void Btn_RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_RegisterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+        if(checkStatus()){
+            //Al controlador
+            this.dispose();
+        }else{
+            label_State.setText("Fill all the fields in the right way");
+        }
+    }//GEN-LAST:event_Btn_RegisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,9 +287,32 @@ public class RegisterView extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void gatherTF(){
+        for (Component component : Data.getComponents()) {
+            if (component instanceof JTextField) {
+                myFields.add((JTextField)component);
+            }
+        }
+    }
+    
+    private boolean checkStatus(){
+        boolean ready=true;
+        
+        for (JTextField tf : myFields) {
+            if(tf.getText().equals("")){
+                ready=false;
+                tf.setBorder(new LineBorder(Color.red));
+            }else{
+                tf.setBorder(new LineBorder(Color.blue));
+            }
+        }
+        
+        return ready;
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup BtnGr_ToS;
     private javax.swing.JButton Btn_Register;
     private javax.swing.JCheckBox CB_Mobile;
     private javax.swing.JCheckBox CB_NES;
@@ -304,9 +340,9 @@ public class RegisterView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JLabel label_State;
     // End of variables declaration//GEN-END:variables
 }

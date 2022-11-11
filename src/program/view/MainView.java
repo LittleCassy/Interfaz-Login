@@ -9,7 +9,7 @@ import javax.print.attribute.standard.Media;
 
 /**
  *
- * @author lazon
+ * @author Cassy McJack
  */
 public class MainView extends javax.swing.JFrame {
 
@@ -72,7 +72,7 @@ public class MainView extends javax.swing.JFrame {
 
         LoginInfo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setText("Bienvenid@:");
+        jLabel3.setText("Welcome:");
         LoginInfo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
@@ -86,7 +86,7 @@ public class MainView extends javax.swing.JFrame {
         btn_Login.setText("Login");
         LoginButtons.add(btn_Login, java.awt.BorderLayout.LINE_END);
 
-        btn_Register.setText("Register");
+        btn_Register.setText("Sign up");
         btn_Register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_RegisterActionPerformed(evt);
@@ -96,7 +96,7 @@ public class MainView extends javax.swing.JFrame {
 
         getContentPane().add(LoginButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 160, 30));
 
-        Play.setLayout(new java.awt.GridLayout());
+        Play.setLayout(new java.awt.GridLayout(1, 0));
 
         Btn_Play.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         Btn_Play.setText("PLAY!");
