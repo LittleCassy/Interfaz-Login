@@ -7,6 +7,8 @@ package program.view;
 import java.io.File;
 import javax.print.attribute.standard.Media;
 
+import program.controllers.UserLogic;
+
 /**
  *
  * @author Cassy McJack
@@ -18,6 +20,7 @@ public class MainView extends javax.swing.JFrame {
      */
     public MainView() {
         initComponents();
+        UserLogic.Init();
     }
 
     /**

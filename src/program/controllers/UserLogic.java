@@ -1,8 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package program.controllers;
+
+import java.sql.SQLException;
+
+import program.model.JDBCModel;
+import program.model.ModelLogic;
 
 /**
  *
@@ -10,8 +11,25 @@ package program.controllers;
  */
 public class UserLogic {
     
-    
-    public static boolean RegisterUser(){
+	private static JDBCModel myController = null;
+	
+    public static void Init() {
+    	
+    	if(myController==null) {
+    		try {
+    			myController = new JDBCModel();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	}else {
+    		System.err.println("Oh oh");
+    	}
+    	
+    }
+	
+    public static boolean RegisterUser(String username, String email, String password, String Birthday){
+    	
         
         return false;
     }
