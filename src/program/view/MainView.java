@@ -84,6 +84,11 @@ public class MainView extends javax.swing.JFrame {
         LoginButtons.setLayout(new java.awt.BorderLayout());
 
         btn_Login.setText("Login");
+        btn_Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_LoginActionPerformed(evt);
+            }
+        });
         LoginButtons.add(btn_Login, java.awt.BorderLayout.LINE_END);
 
         btn_Register.setText("Sign up");
@@ -136,8 +141,18 @@ public class MainView extends javax.swing.JFrame {
 
     private void btn_RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RegisterActionPerformed
         // TODO add your handling code here:
-        new RegisterView().setVisible(true);
+        this.setVisible(false);
+        RegisterView regi = new RegisterView();
+        regi.myMain = MainView.this;
+        regi.setVisible(true);
     }//GEN-LAST:event_btn_RegisterActionPerformed
+
+    private void btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LoginActionPerformed
+        this.setVisible(false);
+        LoginView log = new LoginView();
+        log.myMain = MainView.this;
+        log.setVisible(true);
+    }//GEN-LAST:event_btn_LoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,7 +181,7 @@ public class MainView extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

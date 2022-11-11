@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
+import program.controllers.UserLogic;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -22,6 +24,8 @@ public class RegisterView extends javax.swing.JFrame {
      */
     
     ArrayList<JTextField> myFields = new ArrayList<>();
+    public static MainView myMain;
+    
     
     public RegisterView() {
         initComponents();
@@ -37,6 +41,9 @@ public class RegisterView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Sucess = new javax.swing.JDialog();
+        jButton1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
         MainPanel = new javax.swing.JPanel();
         Data = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -69,10 +76,52 @@ public class RegisterView extends javax.swing.JFrame {
         Btn_Register = new javax.swing.JButton();
         label_State = new javax.swing.JLabel();
 
+        Sucess.setMinimumSize(new java.awt.Dimension(311, 150));
+        Sucess.setResizable(false);
+
+        jButton1.setText("Accept");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Signed up suscessfully");
+
+        javax.swing.GroupLayout SucessLayout = new javax.swing.GroupLayout(Sucess.getContentPane());
+        Sucess.getContentPane().setLayout(SucessLayout);
+        SucessLayout.setHorizontalGroup(
+            SucessLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SucessLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(SucessLayout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        SucessLayout.setVerticalGroup(
+            SucessLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SucessLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Register, please :)");
         setMinimumSize(new java.awt.Dimension(578, 429));
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Data.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -246,13 +295,31 @@ public class RegisterView extends javax.swing.JFrame {
     private void Btn_RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_RegisterActionPerformed
         // TODO add your handling code here:
         if(checkStatus()){
-            //Al controlador
-            this.dispose();
+            if(UserLogic.RegisterUser()){
+                Sucess.setVisible(true);
+                myMain.setVisible(true);
+                this.dispose();
+            }else{
+                label_State.setText("User already registed or incorrect data");
+            }
         }else{
             label_State.setText("Fill all the fields in the right way");
         }
     }//GEN-LAST:event_Btn_RegisterActionPerformed
 
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        myMain.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_formWindowClosed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -326,12 +393,15 @@ public class RegisterView extends javax.swing.JFrame {
     private javax.swing.JPanel Data;
     private javax.swing.JFormattedTextField FTF_Birthday;
     private javax.swing.JPanel MainPanel;
+    private javax.swing.JDialog Sucess;
     private javax.swing.JTextField TF_Email;
     private javax.swing.JTextField TF_Password;
     private javax.swing.JTextField TF_RepeatPass;
     private javax.swing.JTextField TF_Username;
     private javax.swing.JPanel ToS;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

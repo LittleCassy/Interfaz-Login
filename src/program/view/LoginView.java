@@ -4,6 +4,12 @@
  */
 package program.view;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.util.ArrayList;
+import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
+
 /**
  *
  * @author Casandra McJack
@@ -13,8 +19,14 @@ public class LoginView extends javax.swing.JFrame {
     /**
      * Creates new form LoginView
      */
+    
+    ArrayList<JTextField> myFields = new ArrayList<>();
+    public static MainView myMain;
+    
+    
     public LoginView() {
         initComponents();
+        gatherTF();
     }
 
     /**
@@ -38,8 +50,13 @@ public class LoginView extends javax.swing.JFrame {
         Btn_Login = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         mainContainer.setLayout(new java.awt.GridLayout(9, 2));
         mainContainer.add(filler2);
@@ -66,6 +83,11 @@ public class LoginView extends javax.swing.JFrame {
         mainContainer.add(filler1);
 
         Btn_Login.setText("Login!");
+        Btn_Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_LoginActionPerformed(evt);
+            }
+        });
         mainContainer.add(Btn_Login);
 
         getContentPane().add(mainContainer, java.awt.BorderLayout.CENTER);
@@ -78,6 +100,21 @@ public class LoginView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_LoginActionPerformed
+        // TODO add your handling code here:
+        if(checkStatus()){
+            
+        }else{
+            
+        }
+    }//GEN-LAST:event_Btn_LoginActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        myMain.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
@@ -112,6 +149,29 @@ public class LoginView extends javax.swing.JFrame {
                 new LoginView().setVisible(true);
             }
         });
+    }
+    
+    private void gatherTF(){
+        for (Component component : mainContainer.getComponents()) {
+            if (component instanceof JTextField) {
+                myFields.add((JTextField)component);
+            }
+        }
+    }
+    
+    private boolean checkStatus(){
+        boolean ready=true;
+        
+        for (JTextField tf : myFields) {
+            if(tf.getText().equals("")){
+                ready=false;
+                tf.setBorder(new LineBorder(Color.red));
+            }else{
+                tf.setBorder(new LineBorder(Color.blue));
+            }
+        }
+        
+        return ready;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

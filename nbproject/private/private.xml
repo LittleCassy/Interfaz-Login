@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/lazon/Documents/GitHub/Interfaz-Login/src/program/view/MainView.java</file>
+            <file>file:/C:/Users/lazon/Documents/GitHub/Interfaz-Login/src/program/view/LoginView.java</file>
+            <file>file:/C:/Users/lazon/Documents/GitHub/Interfaz-Login/src/program/view/RegisterView.java</file>
+            <file>file:/C:/Users/lazon/Documents/GitHub/Interfaz-Login/src/program/model/UserLogic.java</file>
+            <file>file:/C:/Users/lazon/Documents/GitHub/Interfaz-Login/src/program/controller/JDBCController.java</file>
+        </group>
     </open-files>
 </project-private>
