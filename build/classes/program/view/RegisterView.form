@@ -350,7 +350,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="88" y="6" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="70" y="10" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -368,7 +368,7 @@
               <SubComponents>
                 <Component class="javax.swing.JTextPane" name="jTextPane1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Nuestra aplicaci &#x301;on tiene que ser capaz de almacenar un nuevo usuario con distintos datos como nombre, apellidos, fecha nacimiento entre otros datos. Aqu &#x301;&#x131; se pueden usar muchos eventos, tantos para mostrar campos de ayuda o mensajes de error si no se cumple ciertas condici &#x301;on, os los dejo a vuestra creatividad. Dichos datos pueden ser almacenados en una array o lista y usado a lo largo del programa aunque esto genera un problema ya que cuando se cierre la aplicaci &#x301;on los nuevos usuarios no se quedar &#x301;an guardados para arreglarlos es necesario implementar la parte extra.Nuestra aplicaci &#x301;on tiene que ser capaz de almacenar un nuevo usuario con distintos datos como nombre, apellidos, fecha nacimiento entre otros datos. Aqu &#x301;&#x131; se pueden usar muchos eventos, tantos para mostrar campos de ayuda o mensajes de error si no se cumple ciertas condici &#x301;on, os los dejo a vuestra creatividad. Dichos datos pueden ser almacenados en una array o lista y usado a lo largo del programa aunque esto genera un problema ya que cuando se cierre la aplicaci &#x301;on los nuevos usuarios no se quedar &#x301;an guardados para arreglarlos es necesario implementar la parte extra.Nuestra aplicaci &#x301;on tiene que ser capaz de almacenar un nuevo usuario con distintos datos como nombre, apellidos, fecha nacimiento entre otros datos. Aqu &#x301;&#x131; se pueden usar muchos eventos, tantos para mostrar campos de ayuda o mensajes de error si no se cumple ciertas condici &#x301;on, os los dejo a vuestra creatividad. Dichos datos pueden ser almacenados en una array o lista y usado a lo largo del programa aunque esto genera un problema ya que cuando se cierre la aplicaci &#x301;on los nuevos usuarios no se quedar &#x301;an guardados para arreglarlos es necesario implementar la parte extra."/>
+                    <Property name="text" type="java.lang.String" value="Desde Casandra Gamerwors no nos hacemos responsalbes de las distintas experiencas reveladoras que estais por tener, de las ideas revolucionarias que pueden salir de tu experiencia como jugador, o de tus desdes autol&#xed;citos por todo el caos. Esta es una vista directa al infierno que es la mente de la programadora princiapl, as&#xed; que abr&#xf3;chese bien el cintur&#xf3;n, prepare pa&#xf1;uelos, un objeto afilado, y disfrute del viaje. Creando su cuenta, autoriza, adem&#xe1;s, el uso de sus datos en distinta caterba de rituales."/>
                   </Properties>
                 </Component>
               </SubComponents>

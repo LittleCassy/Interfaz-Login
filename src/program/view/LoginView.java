@@ -45,7 +45,7 @@ public class LoginView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         TF_Email = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        TF_Pass = new javax.swing.JTextField();
+        TF_Pass = new javax.swing.JPasswordField();
         filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0));
         CB_PassRemember = new javax.swing.JCheckBox();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 32767));
@@ -187,7 +187,7 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JButton Btn_Login;
     private javax.swing.JCheckBox CB_PassRemember;
     private javax.swing.JTextField TF_Email;
-    private javax.swing.JTextField TF_Pass;
+    private javax.swing.JPasswordField TF_Pass;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
     private javax.swing.Box.Filler filler3;

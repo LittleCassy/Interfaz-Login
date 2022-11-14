@@ -30,6 +30,7 @@ public class RegisterView extends javax.swing.JFrame {
     public RegisterView() {
         initComponents();
         gatherTF();
+        jTextPane1.setEditable(false);
     }
 
     /**
@@ -224,9 +225,9 @@ public class RegisterView extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jLabel6.setText("Terms of Service");
-        ToS.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 6, -1, -1));
+        ToS.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
 
-        jTextPane1.setText("Nuestra aplicaci ́on tiene que ser capaz de almacenar un nuevo usuario con distintos datos como nombre, apellidos, fecha nacimiento entre otros datos. Aqu ́ı se pueden usar muchos eventos, tantos para mostrar campos de ayuda o mensajes de error si no se cumple ciertas condici ́on, os los dejo a vuestra creatividad. Dichos datos pueden ser almacenados en una array o lista y usado a lo largo del programa aunque esto genera un problema ya que cuando se cierre la aplicaci ́on los nuevos usuarios no se quedar ́an guardados para arreglarlos es necesario implementar la parte extra.Nuestra aplicaci ́on tiene que ser capaz de almacenar un nuevo usuario con distintos datos como nombre, apellidos, fecha nacimiento entre otros datos. Aqu ́ı se pueden usar muchos eventos, tantos para mostrar campos de ayuda o mensajes de error si no se cumple ciertas condici ́on, os los dejo a vuestra creatividad. Dichos datos pueden ser almacenados en una array o lista y usado a lo largo del programa aunque esto genera un problema ya que cuando se cierre la aplicaci ́on los nuevos usuarios no se quedar ́an guardados para arreglarlos es necesario implementar la parte extra.Nuestra aplicaci ́on tiene que ser capaz de almacenar un nuevo usuario con distintos datos como nombre, apellidos, fecha nacimiento entre otros datos. Aqu ́ı se pueden usar muchos eventos, tantos para mostrar campos de ayuda o mensajes de error si no se cumple ciertas condici ́on, os los dejo a vuestra creatividad. Dichos datos pueden ser almacenados en una array o lista y usado a lo largo del programa aunque esto genera un problema ya que cuando se cierre la aplicaci ́on los nuevos usuarios no se quedar ́an guardados para arreglarlos es necesario implementar la parte extra.");
+        jTextPane1.setText("Desde Casandra Gamerwors no nos hacemos responsalbes de las distintas experiencas reveladoras que estais por tener, de las ideas revolucionarias que pueden salir de tu experiencia como jugador, o de tus desdes autolícitos por todo el caos. Esta es una vista directa al infierno que es la mente de la programadora princiapl, así que abróchese bien el cinturón, prepare pañuelos, un objeto afilado, y disfrute del viaje. Creando su cuenta, autoriza, además, el uso de sus datos en distinta caterba de rituales.");
         jScrollPane2.setViewportView(jTextPane1);
 
         ToS.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 34, 221, 262));

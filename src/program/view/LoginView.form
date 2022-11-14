@@ -67,7 +67,7 @@
             <Property name="text" type="java.lang.String" value="Password"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="TF_Pass">
+        <Component class="javax.swing.JPasswordField" name="TF_Pass">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>

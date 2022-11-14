@@ -4,9 +4,7 @@
  */
 package program.view;
 
-import java.io.File;
-import javax.print.attribute.standard.Media;
-
+import javax.swing.JEditorPane;
 import program.controllers.ProfileManager;
 import program.controllers.UserLogic;
 
@@ -19,13 +17,14 @@ public class MainView extends javax.swing.JFrame {
     /**
      * Creates new form View
      */
+    
     public MainView() {
         initComponents();
         UserLogic.Init();
     }
 
     public void updateComponent() {
-    	label_Username.setText(ProfileManager.getUsername());
+    	label_username.setText(ProfileManager.getUsername());
     }
     
     /**
@@ -39,10 +38,10 @@ public class MainView extends javax.swing.JFrame {
 
         Brand = new javax.swing.JLabel();
         Images = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        image1 = new javax.swing.JLabel();
         LoginInfo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        label_Username = new javax.swing.JLabel();
+        label_username = new javax.swing.JLabel();
         LoginButtons = new javax.swing.JPanel();
         btn_Login = new javax.swing.JButton();
         btn_Register = new javax.swing.JButton();
@@ -71,10 +70,10 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 370, 40));
 
         Images.setBackground(new java.awt.Color(155, 162, 168));
-        Images.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Images.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 10));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/Media1.png"))); // NOI18N
-        Images.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 490, 350));
+        image1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/Media1.png"))); // NOI18N
+        Images.add(image1);
 
         getContentPane().add(Images, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 510, 370));
 
@@ -83,9 +82,9 @@ public class MainView extends javax.swing.JFrame {
         jLabel3.setText("Welcome:");
         LoginInfo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, -1));
 
-        label_Username.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        label_Username.setText("Desconocido");
-        LoginInfo.add(label_Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
+        label_username.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        label_username.setText("Desconocido");
+        LoginInfo.add(label_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
 
         getContentPane().add(LoginInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 180, 40));
 
@@ -121,15 +120,35 @@ public class MainView extends javax.swing.JFrame {
         InfoPanel.setLayout(new java.awt.GridLayout(0, 1, 0, 5));
 
         Btn_Info1.setText("Mandela County is here!");
+        Btn_Info1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Info1ActionPerformed(evt);
+            }
+        });
         InfoPanel.add(Btn_Info1);
 
         Btn_Info2.setText("Happy Cafe big REVEAL!");
+        Btn_Info2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Info2ActionPerformed(evt);
+            }
+        });
         InfoPanel.add(Btn_Info2);
 
         Btn_Info3.setText("About us");
+        Btn_Info3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Info3ActionPerformed(evt);
+            }
+        });
         InfoPanel.add(Btn_Info3);
 
         Btn_Info4.setText("Our first videogame");
+        Btn_Info4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Info4ActionPerformed(evt);
+            }
+        });
         InfoPanel.add(Btn_Info4);
         InfoPanel.add(filler1);
         InfoPanel.add(filler2);
@@ -161,6 +180,29 @@ public class MainView extends javax.swing.JFrame {
         log.myMain = MainView.this;
         log.setVisible(true);
     }//GEN-LAST:event_btn_LoginActionPerformed
+
+    private void Btn_Info1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Info1ActionPerformed
+        // TODO add your handling code here:
+        image1.setVisible(true);
+        image1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/Media1.png")));
+    }//GEN-LAST:event_Btn_Info1ActionPerformed
+
+    private void Btn_Info2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Info2ActionPerformed
+        // TODO add your handling code here:
+        image1.setVisible(true);
+        image1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/Media2.png")));
+    }//GEN-LAST:event_Btn_Info2ActionPerformed
+
+    private void Btn_Info3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Info3ActionPerformed
+        // TODO add your handling code here:
+        image1.setVisible(true);
+        image1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/Media3.png")));
+    }//GEN-LAST:event_Btn_Info3ActionPerformed
+
+    private void Btn_Info4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Info4ActionPerformed
+        image1.setVisible(true);
+        image1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/images/Media4.png")));
+    }//GEN-LAST:event_Btn_Info4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,10 +257,10 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
     private javax.swing.Box.Filler filler3;
+    private javax.swing.JLabel image1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel label_Username;
     private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JLabel label_username;
     // End of variables declaration//GEN-END:variables
 }
